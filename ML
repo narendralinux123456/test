@@ -1,0 +1,6 @@
+if sudo docker ps |grep testweb
+then
+echo "already"
+else
+sudo docker run -d -i -t -p 8081:80 -v /root/testing_web:/usr/local/apache2/htdocs/ --name testweb httpd:latest
+fi
